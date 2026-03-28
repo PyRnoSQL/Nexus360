@@ -1,8 +1,12 @@
 node_modules/
 .env
+.env.local
+.env.production
 *.log
 .DS_Store
 dist/
 build/
 coverage/
 service-account-key.json
+*.key
+*.pem
