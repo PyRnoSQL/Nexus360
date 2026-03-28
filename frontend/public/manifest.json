@@ -1,0 +1,12 @@
+{
+  "short_name": "NEXUS360",
+  "name": "NEXUS360 - DGSN National Security Command Center",
+  "icons": [
+    { "src": "logo.jpg", "type": "image/jpeg", "sizes": "192x192" },
+    { "src": "logo.jpg", "type": "image/jpeg", "sizes": "512x512" }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0a0a0a",
+  "background_color": "#000000"
+}
