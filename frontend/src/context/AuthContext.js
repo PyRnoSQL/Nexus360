@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import api from '../services/api';
 
 const AuthContext = createContext();
+<<<<<<< HEAD
 
 export const useAuth = () => useContext(AuthContext);
 
@@ -13,6 +14,10 @@ const ROLE_MODULE_ACCESS = {
   hr_officer: ['dashboard', 'hr']
 };
 
+=======
+export const useAuth = () => useContext(AuthContext);
+
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,6 +25,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
+<<<<<<< HEAD
       api.get('/auth/profile')
         .then(res => {
           setUser(res.data.data);
@@ -31,6 +37,10 @@ export const AuthProvider = ({ children }) => {
     } else {
       setLoading(false);
     }
+=======
+      api.get('/auth/profile').then(res => setUser(res.data.data)).catch(() => localStorage.removeItem('token')).finally(() => setLoading(false));
+    } else setLoading(false);
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
   }, []);
 
   const login = async (username, password) => {
@@ -39,6 +49,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('token', res.data.data.token);
       setUser(res.data.data.user);
       return { success: true };
+<<<<<<< HEAD
     } catch (err) {
       return { success: false, error: err.response?.data?.error || 'Login failed' };
     }
@@ -76,4 +87,12 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+=======
+    } catch (err) { return { success: false, error: err.response?.data?.error || 'Login failed' }; }
+  };
+
+  const logout = () => { localStorage.removeItem('token'); setUser(null); };
+
+  return <AuthContext.Provider value={{ user, loading, login, logout, isAuthenticated: !!user }}>{children}</AuthContext.Provider>;
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
 };

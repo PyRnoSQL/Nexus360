@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Box, AppBar, Toolbar, IconButton, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { Menu as MenuIcon, Refresh as RefreshIcon } from '@mui/icons-material';
@@ -37,6 +38,22 @@ export default function DashboardLayout({ children }) {
           {children}
         </Box>
       </Box>
+=======
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material';
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
+export default function DashboardLayout({ children }) {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <AppBar position="static" sx={{ bgcolor: '#1a237e' }}>
+        <Toolbar><Typography variant="h6" sx={{ flexGrow: 1 }}>NEXUS360 - DGSN</Typography><Typography variant="body2" sx={{ mr: 2 }}>{user?.full_name || user?.username}</Typography><Button color="inherit" onClick={() => { logout(); navigate('/login'); }}>Logout</Button></Toolbar>
+      </AppBar>
+      <Container maxWidth="xl" sx={{ mt: 3, flex: 1 }}>{children}</Container>
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
     </Box>
   );
 }

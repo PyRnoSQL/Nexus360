@@ -1,8 +1,12 @@
 {
+<<<<<<< HEAD
   "build": {
     "builder": "NIXPACKS",
     "buildCommand": "npm install"
   },
+=======
+  "build": { "builder": "NIXPACKS", "buildCommand": "npm install" },
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
   "deploy": {
     "startCommand": "npm start",
     "restartPolicyType": "ON_FAILURE",

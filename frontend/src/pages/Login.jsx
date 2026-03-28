@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { TextField, Button, Box, Typography, Alert, Paper, IconButton, InputAdornment } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import logo from '../assets/images/logo.jpg';
+=======
+import { Container, Paper, TextField, Button, Typography, Alert, Box } from '@mui/material';
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+<<<<<<< HEAD
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+=======
+  const [error, setError] = useState('');
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     setLoading(true);
     setError('');
     const result = await login(username, password);
@@ -124,5 +133,30 @@ export default function Login() {
         </Typography>
       </Paper>
     </Box>
+=======
+    const result = await login(username, password);
+    if (result.success) navigate('/');
+    else setError(result.error);
+  };
+
+  return (
+    <Container maxWidth="sm" sx={{ mt: 8 }}>
+      <Paper sx={{ p: 4 }}>
+        <Typography variant="h4" align="center" gutterBottom>NEXUS360</Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" gutterBottom>DGSN Command Center</Typography>
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        <form onSubmit={handleSubmit}>
+          <TextField fullWidth label="Username" margin="normal" value={username} onChange={e => setUsername(e.target.value)} />
+          <TextField fullWidth label="Password" type="password" margin="normal" value={password} onChange={e => setPassword(e.target.value)} />
+          <Button fullWidth variant="contained" type="submit" sx={{ mt: 2 }}>Login</Button>
+        </form>
+        {process.env.REACT_APP_DEMO_MODE === 'true' && (
+          <Box sx={{ mt: 2, textAlign: 'center' }}>
+            <Typography variant="caption" color="textSecondary">Demo Mode: Use username "demo" with any password</Typography>
+          </Box>
+        )}
+      </Paper>
+    </Container>
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
   );
 }

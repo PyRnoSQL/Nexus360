@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const TrainingController = require('../controllers/trainingController');
@@ -15,3 +16,6 @@ router.get('/roi-by-region', TrainingController.getROIByRegion);
 router.post('/', TrainingController.create);
 
 module.exports = router;
+=======
+const express = require('express'); const router = express.Router(); router.get('/', (req, res) => res.json({ success: true, data: [] })); module.exports = router;
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)

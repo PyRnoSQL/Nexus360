@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
+<<<<<<< HEAD
 import Dashboard from './pages/Dashboard';
 import OperationsPage from './pages/OperationsPage';
 import LogisticsPage from './pages/LogisticsPage';
@@ -116,4 +117,27 @@ function App() {
   );
 }
 
+=======
+import ExecutiveDashboard from './pages/ExecutiveDashboard';
+import DashboardLayout from './components/Layout/DashboardLayout';
+
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return <div>Loading...</div>;
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
+
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<ProtectedRoute><DashboardLayout><ExecutiveDashboard /></DashboardLayout></ProtectedRoute>} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
+>>>>>>> d7011e7 (Initial commit: NEXUS360 complete platform)
 export default App;
