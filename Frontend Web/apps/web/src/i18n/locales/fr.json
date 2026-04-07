@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "Bienvenue",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "forms": "Formulaires",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "loading": "Chargement...",
+    "offline": "Mode hors ligne"
+  },
+  "nav": {
+    "executive": "Délégation Générale",
+    "finance": "Finances & Budget",
+    "rh": "Ressources Humaines",
+    "operations": "Opérations & Sécurité",
+    "logistique": "Logistique & Parc",
+    "formation": "Formation",
+    "lean": "LEAN & Performance",
+    "forms": "Formulaires"
+  },
+  "login": {
+    "title": "Plateforme Nationale d'Intelligence Opérationnelle",
+    "subtitle": "Délégation Générale à la Sûreté Nationale du Cameroun",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "button": "Se connecter",
+    "invalid": "Identifiants invalides"
+  },
+  "forms": {
+    "title": "Formulaires opérationnels DGSN",
+    "description": "Remplissez et soumettez les formulaires d'intelligence opérationnelle",
+    "noAccess": "Accès restreint",
+    "noAccessMessage": "Seuls les Officiers et Super Administrateurs peuvent accéder aux formulaires.",
+    "submit": "Soumettre",
+    "submitSuccess": "Formulaire soumis avec succès",
+    "submitError": "Erreur lors de la soumission"
+  }
+}
