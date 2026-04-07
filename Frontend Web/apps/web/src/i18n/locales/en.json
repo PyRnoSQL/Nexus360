@@ -1,0 +1,41 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "forms": "Forms",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading...",
+    "offline": "Offline Mode"
+  },
+  "nav": {
+    "executive": "Executive Leadership",
+    "finance": "Finance & Budget",
+    "rh": "Human Resources",
+    "operations": "Operations & Security",
+    "logistique": "Logistics & Fleet",
+    "formation": "Training",
+    "lean": "LEAN & Performance",
+    "forms": "Forms"
+  },
+  "login": {
+    "title": "National Operational Intelligence Platform",
+    "subtitle": "Directorate General for National Security of Cameroon",
+    "username": "Username",
+    "password": "Password",
+    "button": "Sign In",
+    "invalid": "Invalid credentials"
+  },
+  "forms": {
+    "title": "DGSN Operational Forms",
+    "description": "Complete and submit operational intelligence forms",
+    "noAccess": "Access Restricted",
+    "noAccessMessage": "Only Officers and Super Administrators can access forms.",
+    "submit": "Submit",
+    "submitSuccess": "Form submitted successfully",
+    "submitError": "Error submitting form"
+  }
+}
