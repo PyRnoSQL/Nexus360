@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Uploads
+apps/api/uploads/*
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Railway
+.railway/
