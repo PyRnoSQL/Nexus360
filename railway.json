@@ -1,0 +1,28 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "pnpm install && pnpm build"
+  },
+  "services": [
+    {
+      "name": "api",
+      "type": "web",
+      "dockerfile": "apps/api/Dockerfile",
+      "env": {
+        "PORT": "3001",
+        "NODE_ENV": "production"
+      },
+      "domains": ["api.nexus360.opex-analytica.com"]
+    },
+    {
+      "name": "web",
+      "type": "web",
+      "dockerfile": "docker/Dockerfile.web",
+      "env": {
+        "VITE_API_URL": "https://api.nexus360.opex-analytica.com"
+      },
+      "domains": ["nexus360.opex-analytica.com"]
+    }
+  ]
+}
